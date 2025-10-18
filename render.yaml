@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: rsshub
+    runtime: image
+    image:
+      url: diygod/rsshub:latest
+    plan: free
+    region: oregon
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CACHE_TYPE
+        value: memory
+      - key: ALLOW_ORIGIN
+        value: "*"
+      # Телеграм-авторизация (добавьте свои значения ниже)
+      - key: TELEGRAM_API_ID
+        value: "123456"
+      - key: TELEGRAM_API_HASH
+        value: "your_api_hash"
+      - key: TELEGRAM_SESSION
+        value: "your_telegram_session_string"
